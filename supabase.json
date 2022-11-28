@@ -1,12 +1,12 @@
 {
-    "version": "1.16.1",
+    "version": "1.16.2",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/supabase/cli/releases/download/v1.16.1/supabase_1.16.1_windows_amd64.tar.gz",
+            "url": "https://github.com/supabase/cli/releases/download/v1.16.2/supabase_1.16.2_windows_amd64.tar.gz",
             "bin": [
                 "supabase.exe"
             ],
-            "hash": "9d9dc3de948cf1037fcd1f0e3d1ef19431bd7e7ec987f0179a8e6e96f07c84f1"
+            "hash": "3d017fb646e4deaf45ab025fc8251d4a222a0e9b215aedcdd0a9a55a03795801"
         }
     },
     "homepage": "https://supabase.io",
