@@ -7,6 +7,13 @@
                 "supabase.exe"
             ],
             "hash": "35c81e3b3864e9c981ab7a8c0b70d090e8e2664f79d5e488e64bbf84f341caf7"
+        },
+        "arm64": {
+            "url": "https://github.com/supabase/cli/releases/download/v1.148.0/supabase_windows_arm64.tar.gz",
+            "bin": [
+                "supabase.exe"
+            ],
+            "hash": "c70abfcd17249d791c69b96ad31d1078e94fde9f283bbac76b58c96e4cf8fadd"
         }
     },
     "homepage": "https://supabase.com",
