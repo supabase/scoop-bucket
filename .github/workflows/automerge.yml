@@ -1,0 +1,27 @@
+name: Auto-merge Beta
+
+on:
+  pull_request:
+    branches:
+      # Branch protection only allows bots to push to release branch
+      - release/cli
+    paths:
+      - 'supabase-beta.rb'
+
+permissions:
+  pull-requests: write
+  contents: write
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    env:
+      PR_URL: ${{ github.event.pull_request.html_url }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - id: diff
+        run: echo "files=$(gh pr diff --name-only $PR_URL)" >> $GITHUB_OUTPUT
+      - if: ${{ steps.diff.outputs.files == 'supabase-beta.rb' }}
+        run: gh pr review --approve "$PR_URL"
+      - if: ${{ steps.diff.outputs.files == 'supabase-beta.rb' }}
+        run: gh pr merge --auto --squash "$PR_URL"
