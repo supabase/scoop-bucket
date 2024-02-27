@@ -3,8 +3,7 @@ name: Auto-merge Beta
 on:
   pull_request:
     branches:
-      # Branch protection only allows bots to push to release branch
-      - release/cli
+      - main
     paths:
       - 'supabase-beta.json'
 
@@ -20,6 +19,8 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - id: diff
+        # Branch protection only allows bots to push to release branch
+        if: ${{ startsWith(github.head_ref,	'releases/') }}
         run: echo "files=$(gh pr diff --name-only $PR_URL)" >> $GITHUB_OUTPUT
       - if: ${{ steps.diff.outputs.files == 'supabase-beta.json' }}
         run: gh pr review --approve "$PR_URL"
