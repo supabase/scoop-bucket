@@ -6,7 +6,7 @@ on:
       # Branch protection only allows bots to push to release branch
       - release/cli
     paths:
-      - 'supabase-beta.rb'
+      - 'supabase-beta.json'
 
 permissions:
   pull-requests: write
@@ -21,7 +21,7 @@ jobs:
     steps:
       - id: diff
         run: echo "files=$(gh pr diff --name-only $PR_URL)" >> $GITHUB_OUTPUT
-      - if: ${{ steps.diff.outputs.files == 'supabase-beta.rb' }}
+      - if: ${{ steps.diff.outputs.files == 'supabase-beta.json' }}
         run: gh pr review --approve "$PR_URL"
-      - if: ${{ steps.diff.outputs.files == 'supabase-beta.rb' }}
+      - if: ${{ steps.diff.outputs.files == 'supabase-beta.json' }}
         run: gh pr merge --auto --squash "$PR_URL"
