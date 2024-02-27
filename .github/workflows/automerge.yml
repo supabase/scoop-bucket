@@ -20,7 +20,7 @@ jobs:
     steps:
       - id: diff
         # Branch protection only allows bots to push to release branch
-        if: ${{ startsWith(github.head_ref,	'releases/') }}
+        if: ${{ startsWith(github.head_ref,	'release/') }}
         run: echo "files=$(gh pr diff --name-only $PR_URL)" >> $GITHUB_OUTPUT
       - if: ${{ steps.diff.outputs.files == 'supabase-beta.json' }}
         run: gh pr review --approve "$PR_URL"
