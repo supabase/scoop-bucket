@@ -1,0 +1,3 @@
+supabase.json @supabase/cli
+supabase-beta.json @supabase/cli
+dbdev.json @supabase/postgres
