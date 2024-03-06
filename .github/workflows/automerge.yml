@@ -19,8 +19,7 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - id: diff
-        # Branch protection only allows release/* branches to be updated by bots.
-        # This step will also throw an error if more than 1 file is changed.
+        # Branch protection only allows bots to push to release branch
         if: ${{ startsWith(github.head_ref,	'release/') }}
         run: echo "files=$(gh pr diff --name-only $PR_URL)" >> $GITHUB_OUTPUT
       - if: ${{ steps.diff.outputs.files == 'supabase-beta.json' }}
