@@ -26,4 +26,4 @@ jobs:
       - if: ${{ steps.diff.outputs.files == 'supabase-beta.json' }}
         run: gh pr review --approve "$PR_URL"
       - if: ${{ steps.diff.outputs.files == 'supabase-beta.json' }}
-        run: gh pr merge --auto --squash "$PR_URL"
+        run: gh pr merge -d --squash "$PR_URL"
