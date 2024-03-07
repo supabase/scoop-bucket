@@ -15,15 +15,17 @@ jobs:
   merge:
     runs-on: ubuntu-latest
     env:
-      # PR_URL: ${{ github.event.pull_request.html_url }}
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - uses: actions/checkout@v4
       - id: diff
         # Branch protection only allows release/* branches to be updated by bots.
         # This step will also throw an error if more than 1 file is changed.
         if: ${{ startsWith(github.head_ref,	'release/') }}
-        run: echo "files=$(gh pr diff --name-only)" >> $GITHUB_OUTPUT
+        run: echo "files=$(gh pr diff --name-only ${{ github.event.pull_request.html_url }})" >> $GITHUB_OUTPUT
+      - if: ${{ steps.diff.outputs.files == 'supabase-beta.json' }}
+        uses: actions/checkout@v4
+        with: 
+          ref: ${{ github.head_ref }}
       - if: ${{ steps.diff.outputs.files == 'supabase-beta.json' }}
         run: |
           gh pr merge --auto -d -s
