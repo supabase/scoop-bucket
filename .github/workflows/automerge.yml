@@ -28,5 +28,6 @@ jobs:
           ref: ${{ github.head_ref }}
       - if: ${{ steps.diff.outputs.files == 'supabase-beta.json' }}
         run: |
-          gh pr merge --auto -d -s
           gh pr review --approve
+          gh pr merge -d -s
+          git push origin --delete ${{ github.head_ref }}
