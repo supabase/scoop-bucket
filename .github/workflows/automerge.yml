@@ -24,6 +24,6 @@ jobs:
         if: ${{ startsWith(github.head_ref,	'release/') }}
         run: echo "files=$(gh pr diff --name-only $PR_URL)" >> $GITHUB_OUTPUT
       - if: ${{ steps.diff.outputs.files == 'supabase-beta.json' }}
-        run: gh pr review --approve "$PR_URL"
-      - if: ${{ steps.diff.outputs.files == 'supabase-beta.json' }}
-        run: gh pr merge -d --squash "$PR_URL"
+        run: |
+          gh pr merge --auto -d -s "$PR_URL"
+          gh pr review --approve "$PR_URL"
