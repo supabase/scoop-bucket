@@ -23,7 +23,7 @@ jobs:
         # This step will also throw an error if more than 1 file is changed.
         if: ${{ startsWith(github.head_ref,	'release/') }}
         run: echo "files=$(gh pr diff --name-only $PR_URL)" >> $GITHUB_OUTPUT
-      - if: ${{ steps.diff.outputs.files == 'supabase-beta.rb' }}
+      - if: ${{ steps.diff.outputs.files == 'supabase-beta.json' }}
         run: |
           gh pr review --approve "$PR_URL"
           gh pr merge -d -s "$PR_URL"
