@@ -19,7 +19,6 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - id: diff
-        # Branch protection only allows release/* branches to be updated by maintainers.
         # This step will also throw an error if more than 1 file is changed.
         if: ${{ startsWith(github.head_ref,	'release/') }}
         run: echo "files=$(gh pr diff --name-only $PR_URL)" >> $GITHUB_OUTPUT
