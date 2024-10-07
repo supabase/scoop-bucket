@@ -1,19 +1,19 @@
 {
-    "version": "1.202.4",
+    "version": "1.202.5",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/supabase/cli/releases/download/v1.202.4/supabase_windows_amd64.tar.gz",
+            "url": "https://github.com/supabase/cli/releases/download/v1.202.5/supabase_windows_amd64.tar.gz",
             "bin": [
                 "supabase.exe"
             ],
-            "hash": "07263c388ee144d22bfcf06c4cb1d58e068d759196a0969a6bd070182d174578"
+            "hash": "b2cbe9a4002fcf292d0b42e2afe9023c9e424c26420c4af9ae312219f6a9d800"
         },
         "arm64": {
-            "url": "https://github.com/supabase/cli/releases/download/v1.202.4/supabase_windows_arm64.tar.gz",
+            "url": "https://github.com/supabase/cli/releases/download/v1.202.5/supabase_windows_arm64.tar.gz",
             "bin": [
                 "supabase.exe"
             ],
-            "hash": "8668de1517c2f4d942b3a482a7528894fc614af726d0b3d50547cbb469bd7734"
+            "hash": "71d3055d5e3cad8af10f0621219d6d6032965136470f723da88d9963309e9496"
         }
     },
     "homepage": "https://supabase.com",
