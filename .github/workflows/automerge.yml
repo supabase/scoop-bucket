@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'supabase-beta.json'
+      - "supabase-beta.json"
 
 permissions:
   pull-requests: write
@@ -22,7 +22,19 @@ jobs:
         # This step will also throw an error if more than 1 file is changed.
         if: ${{ startsWith(github.head_ref,	'release/') }}
         run: echo "files=$(gh pr diff --name-only $PR_URL)" >> $GITHUB_OUTPUT
-      - if: ${{ steps.diff.outputs.files == 'supabase-beta.json' }}
+
+      # get an app-token to allow PR approval and merging
+      - id: app-token
+        if: ${{ steps.diff.outputs.files == 'supabase-beta.json' }}
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
+
+      - id: auto-merge
+        if: ${{ steps.app-token.outputs.token }}
+        env:
+          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
         run: |
           gh pr review --approve "$PR_URL"
           gh pr merge -d -s "$PR_URL"
