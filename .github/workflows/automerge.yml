@@ -20,7 +20,7 @@ jobs:
     steps:
       - id: diff
         # This step will also throw an error if more than 1 file is changed.
-        if: ${{ startsWith(github.head_ref,	'release/') }}
+        if: ${{ startsWith(github.head_ref, 'release/') }}
         run: |
           mapfile -t files < <(gh pr diff --name-only "$PR_URL")
 
