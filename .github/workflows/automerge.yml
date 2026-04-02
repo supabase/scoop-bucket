@@ -21,7 +21,15 @@ jobs:
       - id: diff
         # This step will also throw an error if more than 1 file is changed.
         if: ${{ startsWith(github.head_ref,	'release/') }}
-        run: echo "files=$(gh pr diff --name-only $PR_URL)" >> $GITHUB_OUTPUT
+        run: |
+          mapfile -t files < <(gh pr diff --name-only "$PR_URL")
+
+          if [ "${#files[@]}" -ne 1 ]; then
+            echo "Expected exactly 1 changed file, found ${#files[@]}: ${files[*]}"
+            exit 1
+          fi
+
+          echo "files=${files[0]}" >> "$GITHUB_OUTPUT"
 
       # get an app-token to allow PR approval and merging
       - id: app-token
