@@ -9,8 +9,7 @@
             "hash": "d58df8cd8f69bd0f5ce226034434fb68ccef0a8e225d921f99a0b0964ea176b0",
             "bin": [
                 [
-                    "supabase.exe",
-                    "supabase-beta"
+                    "supabase.exe"
                 ]
             ]
         },
@@ -19,8 +18,7 @@
             "hash": "df11393a1fc5408801c160bd40d5a62b87348b8f9f66b199e4f8758c663df13a",
             "bin": [
                 [
-                    "supabase.exe",
-                    "supabase-beta"
+                    "supabase.exe"
                 ]
             ]
         }
