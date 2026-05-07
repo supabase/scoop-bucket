@@ -6,20 +6,16 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/supabase/cli/releases/download/v2.99.0-beta.1/supabase_2.99.0-beta.1_windows_amd64.zip",
-            "hash": "d58df8cd8f69bd0f5ce226034434fb68ccef0a8e225d921f99a0b0964ea176b0",
+            "hash": "bf206c9d7a2702ad171730bcfe6e0180ffa80a4155ef8011c611ff952341bbf8",
             "bin": [
-                [
-                    "supabase.exe"
-                ]
+                "supabase.exe"
             ]
         },
         "arm64": {
             "url": "https://github.com/supabase/cli/releases/download/v2.99.0-beta.1/supabase_2.99.0-beta.1_windows_arm64.zip",
-            "hash": "df11393a1fc5408801c160bd40d5a62b87348b8f9f66b199e4f8758c663df13a",
+            "hash": "624e15255eeb71f54851a505e02784330dfef756297781befdf1eea960741cf6",
             "bin": [
-                [
-                    "supabase.exe"
-                ]
+                "supabase.exe"
             ]
         }
     },
