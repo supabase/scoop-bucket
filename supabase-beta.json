@@ -6,14 +6,14 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/supabase/cli/releases/download/v2.103.0-beta.8/supabase_2.103.0-beta.8_windows_amd64.zip",
-            "hash": "c8b0beb5cf824f72be9a2ecae60cd98aba2b585de503e2663db8a7ca25a93cbc",
+            "hash": "adf1b14eaf639d58e66e577d4ff67386d3160a07ee84630a1194f57fbe92b863",
             "bin": [
                 "supabase.exe"
             ]
         },
         "arm64": {
             "url": "https://github.com/supabase/cli/releases/download/v2.103.0-beta.8/supabase_2.103.0-beta.8_windows_arm64.zip",
-            "hash": "851704962b80a7b1b0410906db7f310440df96ac82ffb487b7bda69c95523b90",
+            "hash": "167cdc1d809708cc8cf1db3a7982ebb182ff84a5c33f7433c90cfe7dabdf6760",
             "bin": [
                 "supabase.exe"
             ]
