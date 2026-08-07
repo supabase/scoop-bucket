@@ -1,16 +1,16 @@
 {
-    "version": "2.112.0-beta.11",
+    "version": "2.112.0-beta.12",
     "description": "Supabase CLI",
     "homepage": "https://supabase.com/",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/supabase/cli/releases/download/v2.112.0-beta.11/supabase_windows_amd64.tar.gz",
-            "hash": "0d9fcb00d9dd449b6cbbbceff0adea8c29b4159431fd236de55b412c4e5dcf23"
+            "url": "https://github.com/supabase/cli/releases/download/v2.112.0-beta.12/supabase_windows_amd64.tar.gz",
+            "hash": "da44a6ae508b5c5765effd96fe4f57ad1083f3d909cf8c3c52268d470354eacb"
         },
         "arm64": {
-            "url": "https://github.com/supabase/cli/releases/download/v2.112.0-beta.11/supabase_windows_arm64.tar.gz",
-            "hash": "14c2c8ac740770c516fa164b81c66b6b18d12651aab1e4f05848a8d1dd829456"
+            "url": "https://github.com/supabase/cli/releases/download/v2.112.0-beta.12/supabase_windows_arm64.tar.gz",
+            "hash": "14de63c2b05e2e1361eacb72dbed5c5685881a15c04c1da3b94e2cc6706c9af8"
         }
     },
     "bin": "supabase.exe",
